@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZS COLLECTION | Fashion & Lifestyle</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <h1>ZS COLLECTION</h1>
+
+    <p>Your Style, Your Choice, Your Collection.</p>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#cart">Cart</a>
+        <a href="#checkout">Checkout</a>
+        <a href="#orders">Orders</a>
+        <a href="#salons">Salons</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+
+    <h2>WELCOME TO ZS COLLECTION</h2>
+
+    <h3>Everything You Need in One Place</h3>
+
+    <p>
+        Fashion | Beauty | Jewellery | Shoes | Lifestyle
+    </p>
+
+    <a href="#products" class="main-btn">
+        Explore Collection
+    </a>
+
+</section>
+
+
+<!-- STATISTICS -->
+
+<section class="statistics">
+
+    <div class="stat-box">
+        <h3>Total Orders</h3>
+        <p id="totalOrders">0</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>Total Products</h3>
+        <p id="totalProducts">0</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>Total Bookings</h3>
+        <p id="totalBookings">0</p>
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+    <h2 class="title">OUR COLLECTION</h2>
+
+    <div class="filters">
+
+        <input
+            type="text"
+            id="searchProduct"
+            placeholder="Search products..."
+        >
+
+        <select id="categoryFilter">
+
+            <option value="All">All Categories</option>
+
+            <option value="Men Clothing">Men Clothing</option>
+
+            <option value="Women Clothing">Women Clothing</option>
+
+            <option value="Kids Clothing">Kids Clothing</option>
+
+            <option value="Men Shoes">Men Shoes</option>
+
+            <option value="Women Shoes">Women Shoes</option>
+
+            <option value="Kids Shoes">Kids Shoes</option>
+
+            <option value="Makeup">Makeup</option>
+
+            <option value="Jewellery">Jewellery</option>
+
+        </select>
+
+    </div>
+
+    <div id="productContainer" class="product-container"></div>
+
+</section>
+
+
+<!-- SHOPPING CART -->
+
+<section id="cart">
+
+    <h2 class="title">YOUR SHOPPING CART</h2>
+
+    <div id="cartItems"></div>
+
+    <h3 class="total">
+        Total: Rs. <span id="cartTotal">0</span>
+    </h3>
+
+    <button onclick="goToCheckout()" class="main-btn">
+        Proceed to Checkout
+    </button>
+
+</section>
+
+
+<!-- CHECKOUT -->
+
+<section id="checkout">
+
+    <h2 class="title">CUSTOMER CHECKOUT</h2>
+
+    <form id="checkoutForm">
+
+        <label>Customer Full Name</label>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your full name"
+            required
+        >
+
+        <label>Phone Number</label>
+
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Enter phone number"
+            required
+        >
+
+        <label>City</label>
+
+        <input
+            type="text"
+            id="customerCity"
+            placeholder="Enter your city"
+            required
+        >
+
+        <label>Complete Delivery Address</label>
+
+        <textarea
+            id="customerAddress"
+            placeholder="House number, street, area and city"
+            required
+        ></textarea>
+
+        <label>Select Payment Method</label>
+
+        <select id="paymentMethod" required>
+
+            <option value="">Select Payment</option>
+
+            <option value="Cash on Delivery">
+                Cash on Delivery
+            </option>
+
+            <option value="JazzCash">
+                JazzCash
+            </option>
+
+            <option value="Easypaisa">
+                Easypaisa
+            </option>
+
+            <option value="Bank Transfer">
+                Bank Transfer
+            </option>
+
+        </select>
+
+        <div class="bill">
+
+            <h3>ORDER SUMMARY</h3>
+
+            <p>Products: Rs. <span id="checkoutSubtotal">0</span></p>
+
+            <p>Delivery Charges: Rs. <span id="deliveryFee">200</span></p>
+
+            <h2>
+                Grand Total: Rs.
+                <span id="grandTotal">200</span>
+            </h2>
+
+        </div>
+
+        <button type="submit" class="main-btn">
+            PLACE MY ORDER
+        </button>
+
+    </form>
+
+    <div id="orderMessage"></div>
+
+</section>
+
+
+<!-- CUSTOMER ORDERS -->
+
+<section id="orders">
+
+    <h2 class="title">CUSTOMER ORDER RECORDS</h2>
+
+    <p class="description">
+        All placed orders are displayed here.
+    </p>
+
+    <div id="orderRecords"></div>
+
+</section>
+
+
+<!-- SALON SECTION -->
+
+<section id="salons">
+
+    <h2 class="title">OUR SALON SERVICES</h2>
+
+    <div class="salon-container">
+
+        <div class="salon-card">
+
+            <h3>Women's Beauty Salon</h3>
+
+            <p>Makeup, Facial, Hair Styling, Bridal Makeup.</p>
+
+        </div>
+
+        <div class="salon-card">
+
+            <h3>Men's Gents Salon</h3>
+
+            <p>Haircut, Beard Styling, Facial, Hair Treatment.</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOOKING -->
+
+    <h2 class="title">BOOK YOUR APPOINTMENT</h2>
+
+    <form id="bookingForm">
+
+        <input
+            type="text"
+            id="bookingName"
+            placeholder="Customer Name"
+            required
+        >
+
+        <input
+            type="tel"
+            id="bookingPhone"
+            placeholder="Phone Number"
+            required
+        >
+
+        <select id="salonType" required>
+
+            <option value="">Select Salon</option>
+
+            <option value="Women's Beauty Salon">
+                Women's Beauty Salon
+            </option>
+
+            <option value="Men's Gents Salon">
+                Men's Gents Salon
+            </option>
+
+        </select>
+
+        <input
+            type="text"
+            id="salonService"
+            placeholder="Required Service"
+            required
+        >
+
+        <input
+            type="date"
+            id="bookingDate"
+            required
+        >
+
+        <button type="submit" class="main-btn">
+            BOOK APPOINTMENT
+        </button>
+
+    </form>
+
+    <div id="bookingRecords"></div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="title">CONTACT ZS COLLECTION</h2>
+
+    <p>Fashion | Beauty | Jewellery | Lifestyle</p>
+
+    <p>Contact Number: 151214</p>
+
+    <p>Welcome to ZS Collection - Everything in One Place.</p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>ZS COLLECTION</h2>
+
+    <p>Your Style, Your Choice, Your Collection.</p>
+
+    <p>© 2026 ZS Collection. All Rights Reserved.</p>
+
+    <p>Contact: 151214</p>
+
+    <h3>Created By Zubair Ali Soomro</h3>
+
+    <p>Web Technology Project</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
